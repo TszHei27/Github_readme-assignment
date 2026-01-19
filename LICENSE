@@ -1,21 +1,62 @@
-MIT License
+reminders = []
+blue = "\033[34m"
+red = "\033[31m"
+cyan = "\033[36m"
+magenta = "\033[35m"
+reset = "\033[0m"
+def todo_list():
+#check if name is str and date is int, if not than false, else add into reminder
+    try:
+        name = input(blue+"please enter your reminder:"+reset)
+        date = input(blue+"please enter your date DD/MM/YY:"+reset)
 
-Copyright (c) 2026 TszHei27
+        if not name.strip() and not date.strip():
+            print("it cannot be empty")
+            return
+        elif name != str and date != int:
+            print("name must be str, date must be int")
+        else:
+            reminders.append({"name":name, "date": date})
+            print(cyan+f"{name}, {date}\n"+reset)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+    except:
+        print(red+"reminder use str date use int"+reset)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+while True:
+#if true ask if they want to add more reminder, next is add give a number to your reminder
+#last if user want to remove their reminder then enter the name, else item is false
+    todo_list()
+    task = input(red+"Add another reminder? (y/n): "+reset)
+    if task.lower() == "n":
+        break
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+print("this is your to-do list")
+for i, task in enumerate(reminders, 1):
+    print(cyan+f"{i}, {task['name']} - {task['date']}"+reset)
+
+completed = input("enter your completed reminder:")
+
+for r in reminders:
+    if r["name"].lower() == completed.lower():
+        reminders.remove(r)
+        print(cyan+f"item have remove: {r['name']}"+reset)
+        break
+
+else:
+        print(cyan+f"this item is not here:{completed}"+reset)
+
+#this is raw text
+print(blue+r"""
+Wolf
+                     .
+                    / V\
+                  / `  /
+                 <<   |
+                 /    |
+               /      |
+             /        |
+           /    \  \ /
+          (      ) | |
+  ________|   _/_  | |
+<__________\______)\__)
+"""+reset)
