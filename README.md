@@ -16,8 +16,12 @@ last, if you finish your reminder, you can remove the reminder by entering the n
 
 ##Features
 
+I used different color to separate the input, reminder name and date. 
 
+##Technologies used
+
+Python
 
 ##License
 
-
+MIT
