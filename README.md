@@ -17,3 +17,7 @@ last, if you finish your reminder, you can remove the reminder by entering the n
 ##Features
 
 
+
+##License
+
+
