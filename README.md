@@ -2,7 +2,7 @@
 
 #Henry_CLI_project 
 
-to create a to-do list, you can check is your things are done or not
+to create a to-do list, you can check are your things are done or not
 
 ##Description
 
