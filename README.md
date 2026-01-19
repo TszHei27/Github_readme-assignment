@@ -11,7 +11,9 @@ The project is about you need to create a program about a to-do list. You can in
 ##How it run
 
 First, you enter your reminder and your date
+
 Second, you can choose to add new reminders, if you stop add then it will give your reminder a number
+
 last, if you finish your reminder, you can remove the reminder by entering the name
 
 ##Features
